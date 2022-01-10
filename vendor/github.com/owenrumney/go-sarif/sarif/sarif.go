@@ -15,11 +15,12 @@ type Version string
 const Version210 Version = "2.1.0"
 
 var versions = map[Version]string{
-	Version210: "http://json.schemastore.org/sarif-2.1.0-rtm.4",
+	Version210: "https://json.schemastore.org/sarif-2.1.0-rtm.5.json",
 }
 
 // Report is the encapsulating type representing a Sarif Report
 type Report struct {
+	PropertyBag
 	Version string `json:"version"`
 	Schema  string `json:"$schema"`
 	Runs    []*Run `json:"runs"`
@@ -77,6 +78,16 @@ func getVersionSchema(version Version) (string, error) {
 		}
 	}
 	return "", fmt.Errorf("version [%s] is not supported", version)
+}
+
+// WriteFile will write the report to a file using a pretty formatter
+func (sarif *Report) WriteFile(filename string) error {
+	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, os.ModeAppend)
+	if err != nil {
+		return err
+	}
+	defer func() { _ = file.Close() }()
+	return sarif.PrettyWrite(file)
 }
 
 // Write writes the JSON as a string with no formatting

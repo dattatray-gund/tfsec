@@ -49,7 +49,7 @@ github.com/mitchellh/go-wordwrap
 # github.com/olekukonko/tablewriter v0.0.5
 ## explicit
 github.com/olekukonko/tablewriter
-# github.com/owenrumney/go-sarif v1.0.0
+# github.com/owenrumney/go-sarif v1.1.1
 ## explicit
 github.com/owenrumney/go-sarif/sarif
 # github.com/pkg/term v0.0.0-20190109203006-aa71e9d9e942
@@ -69,7 +69,7 @@ github.com/spf13/pflag
 ## explicit
 github.com/stretchr/testify/assert
 github.com/stretchr/testify/require
-# github.com/zclconf/go-cty v1.8.2
+# github.com/zclconf/go-cty v1.10.0
 ## explicit
 github.com/zclconf/go-cty/cty
 github.com/zclconf/go-cty/cty/convert
