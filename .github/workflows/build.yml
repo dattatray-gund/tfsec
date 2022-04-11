@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-go@v2
+    - uses: actions/setup-go@v3
       with:
         stable: 'false'
         go-version: '1.16.2' # The Go version to download (if necessary) and use.
